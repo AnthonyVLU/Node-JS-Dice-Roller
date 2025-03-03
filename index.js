@@ -4,6 +4,7 @@ const app = express();
 const port = process.env.PORT || 3000
 
 app.use(cors({ origin: '*' }))
+app.use(express.static(__dirname + '/static'))
 
 app.get("/roll", (req, res) => {
     let rollResult = Math.floor(Math.random() * 6) + 1
